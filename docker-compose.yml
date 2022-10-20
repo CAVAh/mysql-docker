@@ -1,0 +1,23 @@
+version: "3.0"
+
+networks:
+  shared-services:
+    external: true
+services:
+  mysql-5.7:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "12345678"
+      MYSQL_ROOT_PASSWORD: "12345678"
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    networks:
+      - shared-services

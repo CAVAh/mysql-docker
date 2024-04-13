@@ -18,6 +18,6 @@ services:
     expose:
       - "3306"
     volumes:
-      - "./.mysql-data/db:/var/lib/mysql"
+      - "./.mysql5.7-data/db:/var/lib/mysql"
     networks:
       - shared-services

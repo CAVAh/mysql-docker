@@ -1,6 +1,7 @@
 networks:
   shared-services:
     external: true
+
 services:
   mysql-5.7:
     image: mysql:5.7
@@ -13,9 +14,8 @@ services:
       MYSQL_ROOT_PASSWORD: "12345678"
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
     volumes:
       - "./.mysql5.7-data/db:/var/lib/mysql"
+    command: --explicit_defaults_for_timestamp
     networks:
       - shared-services

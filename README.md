@@ -4,6 +4,10 @@ MySQL para Docker
 ## Execução
 Para criar o serviço do MySQL no Docker, rodar o seguinte comando:
 
+`docker network create -d bridge shared-services`
+
+E após inicializar o serviço:
+
 `make up`
 
 ## Logs
